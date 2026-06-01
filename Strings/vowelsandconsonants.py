@@ -1,5 +1,5 @@
 
-#counting vowels and consonantstext = input("Enter the text: ")
+#counting vowels and consonants
 text=input("enter the text: ").lower()
 vowels = ['a', 'e', 'i', 'o', 'u']
 v_count = 0
