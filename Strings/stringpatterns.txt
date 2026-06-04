@@ -1,0 +1,18 @@
+Pattern Summary for Exams
+When you see this clue:
+
+Clue in Question	    Pattern
+rotate string	        s+s
+shift characters	    slicing
+prefix	                startswith()
+suffix	                endswith()
+find substring	        in
+compare frequencies	    dictionary
+palindrome	            two pointers
+minimum rotations	    generate
+------------------------------------------------
+
+ rotationsrotated = s[k:] + s[:k]
+ s.startswith(prefix)
+ s.endswith(suffix)
+ s2 in (s1+s1)
