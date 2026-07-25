@@ -1,15 +1,16 @@
 def dfs(r,c):
     if r<0 or r >=n or c<0 or c>=n:
-        return
+        return 0
     if grid[r][c]==0:
-        return
+        return 0
     if (r,c) in visited:
-        return
+        return 0
     visited.add((r,c))
+    count=1
     traversal.append((r,c))
-    print((r,c))
     for dr,dc,name in dir:
-        dfs(r+dr,c+dc) 
+        count=count+dfs(r+dr,c+dc,) 
+    return count
 n,m=map(int,input("enter the rows and cols:").split())
 grid=[]
 for i in range(n):
@@ -17,9 +18,11 @@ for i in range(n):
     grid.append(row)
 print(grid)
 sr,sc=map(int,input("enter the row no and col no:").split())
-dir=[(-1,0,"up"),(1,0,"down"),(0,-1,"right"),(0,1,"left")]
+dir=[(-1,0,"up"),(1,0,"down"),(0,-1,"left"),(0,1,"right")]
 visited=set()
 traversal=[]
 print("cells containing ones that are visited:")
-dfs(sr,sc)
+count=dfs(sr,sc)
+print(traversal)
 print("->".join(map(str,traversal)))
+print("the area:",count)
